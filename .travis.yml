@@ -1,12 +1,11 @@
 language: java
 sudo: false
+addons:
+  sonarcloud:
+    organization: "dominicfarr"
+    token:
+      secure: fhE+hRxGmOsOpONjwP9NqVuGJuw9/sFJnj4lNq7ehOPblag7dJ3UpwecrCbLu92kEQnMIfaczgNgAILgd+t+09uBSArjLsX4qhSDmKIVtjctfQzr88TOmUgXFZIrbFpkbYozcbnk6mucsKj8BWODqX5Wb3jPHyRQHbcSwuZOcEIwzFzMGZNcTSlifV+6rv4DG8Vp4EZ4DrHiTYhGaxrvepCluTNzcsXJMTD2xc6uwhNGDaUwEtv/nHK8fztXkz7firEVYCdqLfwFpdwCMgoExe87/rov2Oe9tgpwQ7tjnNm/AwMnumePUtyjBnjeQiW5h1LF02uCFiVVDSq6H7p8jVCEa/4CvMUz+M9P6nZEfWOWwtdvMrdpNgQXDDP7OnTC+59GzGGNtyUpFs7R1tZPtUt0TbkBApfCGGoGs+sIR3LLhwy1KzDhJlyCKkUbLiaW9X4RIhklq3ltj9hoo5axkuChqgDDO5eYftEyj2CFn5hLZTyec6/d7ulMP/83glig63Q3vMyjzVUxVTIxrOFwHu//iWQCF/p1m0hM79BsahQiZh6uPiueYkHTvkfXlv4SB+cr3xnlfTCySLS6kQkxOX1SZUTj2mhg+5YhR7OkSH5/zso90pEXPCK4nua2Q5DhtNmrlf2kbPaA+PeoFBcw/uuR1PVksOWnlXMfgIAcqxk=
 
-#addons:
-#  sonarcloud:
-#    organization: "dominicfarr"
-#    token:
-#      secure:
-
-
-#script:
-#- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=dominicfarr_UnionFindAlgorithm
