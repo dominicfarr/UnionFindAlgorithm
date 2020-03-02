@@ -2,7 +2,7 @@
 # Coursera
 
 
-![Travis (.org)](https://img.shields.io/travis/dominicfarr/UnionFindAlgorithm?label=Travis%20Build) ![Sonar Tech Debt](https://img.shields.io/sonar/tech_debt/dominicfarr_UnionFindAlgorithm?label=SonarCloud%20TechDebit&server=https%3A%2F%2Fsonarcloud.io) ![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/dominicfarr_UnionFindAlgorithm?label=SonarCloud%20QaulityGate&server=https%3A%2F%2Fsonarcloud.io)
+[![Build Status](https://travis-ci.com/dominicfarr/UnionFindAlgorithm.svg?branch=master)](https://travis-ci.com/dominicfarr/UnionFindAlgorithm) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dominicfarr_UnionFindAlgorithm&metric=alert_status)](https://sonarcloud.io/dashboard?id=dominicfarr_UnionFindAlgorithm)
+ [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=dominicfarr_UnionFindAlgorithm&metric=sqale_index)](https://sonarcloud.io/dashboard?id=dominicfarr_UnionFindAlgorithm) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=dominicfarr_UnionFindAlgorithm&metric=bugs)](https://sonarcloud.io/dashboard?id=dominicfarr_UnionFindAlgorithm) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=dominicfarr_UnionFindAlgorithm&metric=coverage)](https://sonarcloud.io/dashboard?id=dominicfarr_UnionFindAlgorithm)
 
-
-My coursera learning codez 
