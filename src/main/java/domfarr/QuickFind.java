@@ -1,7 +1,7 @@
 package domfarr;
 
 public class QuickFind {
-    public static int[] arr = new int[10];
+    private int[] arr;
 
     public QuickFind(final int n) {
         arr = new int[n];

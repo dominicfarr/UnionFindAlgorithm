@@ -40,6 +40,7 @@ public class QuickFindTest {
     @Test
     public void testSecondUnionsHaveZeroConnectedToSeven() {
         secondSetOfUnions();
-        boolean c3 = quickFind.connected(0, 7);assertThat(c3, is(true));
+        boolean c3 = quickFind.connected(0, 7);
+        assertThat(c3, is(true));
     }
 }
