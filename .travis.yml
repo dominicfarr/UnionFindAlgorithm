@@ -1,0 +1,12 @@
+language: java
+sudo: false
+
+#addons:
+#  sonarcloud:
+#    organization: "dominicfarr"
+#    token:
+#      secure:
+
+
+#script:
+#- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
