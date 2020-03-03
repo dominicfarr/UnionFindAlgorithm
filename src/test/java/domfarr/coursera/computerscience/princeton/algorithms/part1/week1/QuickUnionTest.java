@@ -30,14 +30,14 @@ public class QuickUnionTest {
     @Test
     public void testInitialUnions() {
         final int[] expected = new int[]{0, 1, 1, 8, 3, 5, 5, 7, 8, 8};
-        testArrayContainsInOrder(expected, quickUnion.getForest());
+        TestArray.testArrayContainsInOrder(expected, quickUnion.getForest());
     }
 
     @Test
     public void testSecondaryUnions() {
         secondSetOfUnions();
         final int[] expected = new int[]{1, 8, 1, 8, 3, 0, 5, 1, 8, 8};
-        testArrayContainsInOrder(expected, quickUnion.getForest());
+        TestArray.testArrayContainsInOrder(expected, quickUnion.getForest());
     }
 
     @Test
@@ -50,9 +50,4 @@ public class QuickUnionTest {
         assertThat(quickUnion.connected(8, 9), is(true));
     }
 
-    private void testArrayContainsInOrder(int[] expected, int[] actual) {
-        for (int i = 0; i < expected.length; i++) {
-            assertThat(actual[i], equalTo(expected[i]));
-        }
-    }
 }
