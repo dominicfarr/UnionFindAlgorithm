@@ -1,4 +1,4 @@
-package domfarr;
+package domfarr.coursera.computerscience.princeton.algorithms.part1.week1;
 
 import org.junit.Before;
 import org.junit.Test;
