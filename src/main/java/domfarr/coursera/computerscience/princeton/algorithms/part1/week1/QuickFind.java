@@ -1,7 +1,7 @@
 package domfarr.coursera.computerscience.princeton.algorithms.part1.week1;
 
 public class QuickFind {
-    private int[] arr;
+    private final int[] arr;
 
     public QuickFind(final int n) {
         arr = InitialiseArray.initialiseArray(n);
