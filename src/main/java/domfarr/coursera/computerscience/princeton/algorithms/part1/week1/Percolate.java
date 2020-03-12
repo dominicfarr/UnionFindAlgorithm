@@ -10,15 +10,9 @@ public class Percolate extends WeightedCompressedQuickUnion {
         state = new boolean[n*n+2];
         state[0] = true;
         state[n*n+1] = true;
+        connectTopRowToVirtualTop(n);
+        connectBottomRowToVirtualBottom(n);
         this.n = n;
-
-        for (int i = 1; i < n+1; i++) {
-            union(0,i);
-        }
-
-        for (int i = n*n-n+1; i < n*n+1; i++) {
-            union(i, n*n+1);
-        }
     }
 
     public void openSite(int i) {
@@ -32,6 +26,26 @@ public class Percolate extends WeightedCompressedQuickUnion {
             connectDown(i);
         }
         connectLeftRightBoundary(i);
+    }
+
+    public boolean isTrue() {
+        return connected(0, n*n+1);
+    }
+
+    public boolean isOpen(int i) {
+        return state[i];
+    }
+
+    private void connectBottomRowToVirtualBottom(int n) {
+        for (int i = n*n-n+1; i < n*n+1; i++) {
+            union(i, n*n+1);
+        }
+    }
+
+    private void connectTopRowToVirtualTop(int n) {
+        for (int i = 1; i < n+1; i++) {
+            union(0,i);
+        }
     }
 
     private void connectLeftRightBoundary(int i) {
@@ -67,13 +81,5 @@ public class Percolate extends WeightedCompressedQuickUnion {
         if(state[i-1] && !connected(i, i-1)){
             union(i, i-1);
         }
-    }
-
-    public boolean isTrue() {
-        return connected(0, n*n+1);
-    }
-
-    public boolean isOpen(int i) {
-        return state[i];
     }
 }

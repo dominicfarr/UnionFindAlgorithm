@@ -5,6 +5,7 @@ public class WeightedCompressedQuickUnion extends WeightedQuickUnion {
         super(n);
     }
 
+    @Override
     public int findRoot(int i) {
         int id = i;
         while(id != arr[id]) {
