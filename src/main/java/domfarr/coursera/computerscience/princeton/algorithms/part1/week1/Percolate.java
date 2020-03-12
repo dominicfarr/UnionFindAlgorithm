@@ -2,8 +2,8 @@ package domfarr.coursera.computerscience.princeton.algorithms.part1.week1;
 
 
 public class Percolate extends WeightedCompressedQuickUnion {
-    private int n;
-    private boolean[] state;
+    private final int n;
+    private final boolean[] state;
 
     public Percolate(int n) {
         super(n*n+2);
@@ -23,9 +23,9 @@ public class Percolate extends WeightedCompressedQuickUnion {
 
     public void openSite(int i) {
         state[i] = true;
-        if(i > 0 && i < n+1) {// top row
+        if(i > 0 && i < n+1) {
             connectDown(i);
-        } else if(i > n*n-n && i < n*n+1) { // bottom row
+        } else if(i > n*n-n && i < n*n+1) {
             connectUp(i);
         } else {
             connectUp(i);
@@ -35,9 +35,9 @@ public class Percolate extends WeightedCompressedQuickUnion {
     }
 
     private void connectLeftRightBoundary(int i) {
-        if ((i - 1) % n == 0) { // left boundary
+        if ((i - 1) % n == 0) {
             connectRight(i);
-        } else if (i % n == 0) { // right boundary
+        } else if (i % n == 0) {
             connectLeft(i);
         } else {
             connectLeft(i);
@@ -46,39 +46,25 @@ public class Percolate extends WeightedCompressedQuickUnion {
     }
 
     private void connectDown(int i) {
-        // connect down
-//        System.out.println("Check connectivity downwards of " + i);
         if(state[i+n] && !connected(i, i+n)) {
-//            System.out.println("connected " + i +" " + i+n);
             union(i, i+n);
         }
     }
 
     private void connectUp(int i) {
-        // connect up
-//        System.out.println("Check connectivity upwards of " + i);
         if(state[i-n] && !connected(i, i-n)) {
-//            System.out.println("connected " + i + " " + (i-n));
             union(i, i-n);
         }
     }
 
     private void connectRight(int i) {
-        // connect right
-//        System.out.println("Check connectivity to the right of " + i);
         if(state[i+1] && !connected(i, i+1)){
-//            System.out.println("connected " + i + " " + (i+1));
-
             union(i, i+1);
         }
     }
 
     private void connectLeft(int i) {
-        // connect left
-//        System.out.println("Check connectivity to the left of " + i);
         if(state[i-1] && !connected(i, i-1)){
-//            System.out.println("connected " + i + " " + (i-1));
-
             union(i, i-1);
         }
     }

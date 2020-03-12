@@ -1,7 +1,6 @@
 package domfarr.coursera.computerscience.princeton.algorithms.part1.week1;
 
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -9,11 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class PercolateTest {
     private final int n = 5;
-    private Percolate percolate = new Percolate(n);
-
-    @Before
-    public void initUnions() {
-    }
+    private final Percolate percolate = new Percolate(n);
 
     @Test
     public void testWithOpeningSiteTopRowLeftBoundary() {

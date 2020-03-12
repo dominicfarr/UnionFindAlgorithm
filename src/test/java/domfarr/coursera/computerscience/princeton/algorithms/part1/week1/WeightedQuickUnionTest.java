@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class WeightedQuickUnionTest {
     private final int[] expected = new int[]{6, 2, 6, 4, 6, 6, 6, 2, 4, 4};
-    private WeightedQuickUnion weightedQuickUnion = new WeightedQuickUnion(expected.length);
+    private final WeightedQuickUnion weightedQuickUnion = new WeightedQuickUnion(expected.length);
 
 
     @Before
