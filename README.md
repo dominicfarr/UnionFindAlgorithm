@@ -45,7 +45,8 @@ A new data structure is required to hold the size of each tree. Initial size is 
 Time to find is proportional to the depth of any node x, and is at most log<sub>2</sub> N.
 
 ![Depth Proposition](resources/weighted-quick-union-depth-proposition.png "Depth proposition")
-<font size="xx-small">source: Algorithms, Part I by Princeton University</font>
+
+<sub><sub>source: Algorithms, Part I by Princeton University</sub></sub>
 
 #### Question 1: When does depth increase? 
 
