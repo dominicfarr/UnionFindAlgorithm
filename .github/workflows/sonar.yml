@@ -1,0 +1,25 @@
+name: SonarCloud
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: '14'
+      - name: Analyse with SonarCloud
+        run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=domfarr:UnionFindAlgorithm -Dsonar.organization=dominicfarr -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secret.SO NAR_TOKEN }}
